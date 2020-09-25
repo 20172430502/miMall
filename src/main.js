@@ -4,8 +4,12 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-//根据前端的跨域方式（此处为代理方式）做调整
-//axios.defaults.baseURL = process.env.API_ROOT;
+const mock = true;
+if(mock){
+  require('./mock/api');
+}
+
+axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 8000;
 /**
  * axios拦截器
