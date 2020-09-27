@@ -4,11 +4,6 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-const mock = true;
-if(mock){
-  require('./mock/api');
-}
-
 axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 8000;
 /**

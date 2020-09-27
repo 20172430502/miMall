@@ -18,11 +18,11 @@ export default new Router({
           name: 'index',
           component: Index,
         }, {
-          path: '/product',
+          path: '/product/:id',
           name: 'product',
           component: () => import('./pages/product.vue')
         }, {
-          path: '/detail',
+          path: '/detail/:id',
           name: 'detail',
           component: () => import('./pages/detail.vue')
         }
