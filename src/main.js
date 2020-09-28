@@ -3,6 +3,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 8000;
@@ -24,6 +25,7 @@ axios.interceptors.response.use(function(response){
 
 Vue.config.productionTip = false
 Vue.use(VueAxios,axios);
+Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
