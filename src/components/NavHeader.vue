@@ -196,7 +196,6 @@ export default {
           categoryId:'100012'
         }
       }).then((res)=>{
-        console.log(res);
           if(res.list.length>6){
             this.phoneList = res.list.slice(0,6);
           }
@@ -231,7 +230,7 @@ export default {
 
       .my-cart {
         width: 110px;
-        background-color: #ff0000;
+        background-color: #ff6600;
         text-align: center;
         color: #ffffff;
 
@@ -261,7 +260,7 @@ export default {
       display: inline-block;
       width: 55px;
       height: 55px;
-      background-color: #ff0000;
+      background-color: #ff6600;
       a {
         display: inline-block;
         width: 110px;
@@ -272,7 +271,7 @@ export default {
           display: inline-block;
           width: 55px;
           height: 55px;
-          background: url("/imgs/mi-logo.png") repeat center;
+          background: url("/imgs/mi-logo.png") no-repeat center;
           background-size: 55px 55px;
           transition: margin 0.2s;
         }
@@ -281,7 +280,7 @@ export default {
           display: inline-block;
           width: 55px;
           height: 55px;
-          background: url("/imgs/mi-home.png") repeat center;
+          background: url("/imgs/mi-home.png") no-repeat center;
           background-size: 55px 55px;
         }
         &:hover:before {
@@ -310,11 +309,12 @@ export default {
 
         //&表示元素自身，此处表示class为.item-menu的元素
         &:hover {
-          color: #ff0000;
+          color: #ff6600;
           .children {
             width: 1226px;
             height: 220px;
             opacity: 1;
+            z-index: 5;
           }
         }
 
@@ -389,7 +389,7 @@ export default {
           display: inline-block;
           width: 18px;
           height: 18px;
-          background: url("/imgs/icon-search.png") repeat center;
+          background: url("/imgs/icon-search.png") no-repeat center;
           background-size: 18px 18px;
           margin-left: 17px;
         }

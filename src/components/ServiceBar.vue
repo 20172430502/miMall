@@ -47,7 +47,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: url('/imgs/icon-setting.png') repeat center;
+            background: url('/imgs/icon-setting.png') no-repeat center;
             background-size: 20px;
           }
 
@@ -55,7 +55,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: url('/imgs/icon-7day.png') repeat center;
+            background: url('/imgs/icon-7day.png') no-repeat center;
             background-size: 20px;
           }
 
@@ -63,7 +63,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: url('/imgs/icon-15day.png') repeat center;
+            background: url('/imgs/icon-15day.png') no-repeat center;
             background-size: 20px;
           }
 
@@ -71,7 +71,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: url('/imgs/icon-post.png') repeat center;
+            background: url('/imgs/icon-post.png') no-repeat center;
             background-size: 20px;
           }
         }
