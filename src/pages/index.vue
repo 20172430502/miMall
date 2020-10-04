@@ -75,18 +75,31 @@
               <div class="item-info">
                 <h3>{{item.name}}</h3>
                 <p>{{item.subtitle}}</p>
-                <p class="price">{{item.price}}元</p>
+                <p class="price" @click="changeModalState()">{{item.price}}元</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <modal 
+        title="提示"
+        sureText="查看购物车"
+        btnType="1"
+        modalType="middle"
+        :showModal="showModal"
+        @doChange = "closeModal"
+        @goToCart = "goToCart">
+        <template v-slot:body>
+          <p>添加商品成功</p>
+        </template>
+      </modal>
     </div>
   </div>
 </template>
 <script>
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import Modal from './../components/Modal'
   export default{
     name:'index',
     data(){
@@ -279,12 +292,14 @@ import 'swiper/dist/css/swiper.css'
             img:'/imgs/ads/ads-4.jpg'
           }
         ],
-        phoneList:[]
+        phoneList:[],
+        showModal:false
       }
     },
     components: {
       swiper , 
-      swiperSlide
+      swiperSlide,
+      Modal
     },
     mounted(){
       this.getPhoneList();
@@ -299,6 +314,23 @@ import 'swiper/dist/css/swiper.css'
         }).then((res)=>{
           this.phoneList = res.list.slice(6,14);
         })
+      },
+      changeModalState(){
+        this.showModal = true;
+        /* this.axios.post('/carts',{
+          productId:id,
+          selected:true
+        }).then(()=>{
+          
+        }).catch(()=>{
+          
+        }) */
+      },
+      closeModal(){
+        this.showModal = false;
+      },
+      goToCart(){
+        this.$router.push('/cart');
       }
     }
     
