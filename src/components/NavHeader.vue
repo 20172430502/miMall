@@ -233,7 +233,6 @@ export default {
         background-color: #ff6600;
         text-align: center;
         color: #ffffff;
-
         .icon-cart {
           display: inline-block;
           width: 16px;

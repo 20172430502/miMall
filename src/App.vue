@@ -14,7 +14,18 @@ export default {
     }
   },
   mounted(){
-    
+    this.getUser();
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then((res)=>{
+        let user = this.$cookie.get("userId");
+        console.log(user);
+        console.log(res);
+        //to-do保存到vuex里面
+        
+      })
+    }
   }
 }
 </script>

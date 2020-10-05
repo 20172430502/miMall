@@ -75,7 +75,7 @@
               <div class="item-info">
                 <h3>{{item.name}}</h3>
                 <p>{{item.subtitle}}</p>
-                <p class="price" @click="changeModalState()">{{item.price}}元</p>
+                <p class="price" @click="changeModalState(item.id)">{{item.price}}元</p>
               </div>
             </div>
           </div>
@@ -315,16 +315,15 @@ import Modal from './../components/Modal'
           this.phoneList = res.list.slice(6,14);
         })
       },
-      changeModalState(){
-        this.showModal = true;
-        /* this.axios.post('/carts',{
+      changeModalState(id){
+        this.axios.post('/carts',{
           productId:id,
           selected:true
         }).then(()=>{
-          
+          this.showModal = true;
         }).catch(()=>{
           
-        }) */
+        }) 
       },
       closeModal(){
         this.showModal = false;
