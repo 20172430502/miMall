@@ -94,9 +94,11 @@
         </template>
       </modal>
     </div>
+    <service-bar></service-bar>
   </div>
 </template>
 <script>
+import ServiceBar from './../components/ServiceBar'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import Modal from './../components/Modal'
@@ -299,7 +301,8 @@ import Modal from './../components/Modal'
     components: {
       swiper , 
       swiperSlide,
-      Modal
+      Modal,
+      ServiceBar
     },
     mounted(){
       this.getPhoneList();

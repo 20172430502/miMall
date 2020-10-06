@@ -53,6 +53,7 @@
           password
         }).then((res)=>{
           this.$cookie.set('userId',res.id,{expires:7});
+          this.$store.dispatch('saveUsername',res.username);
           this.$router.push('/index');
         })
       },
