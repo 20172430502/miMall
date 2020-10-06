@@ -18,12 +18,12 @@ export default {
   },
   methods:{
     getUser(){
-      this.axios.get('/user').then((res)=>{
+      this.axios.get('/user').then((res={})=>{
         //浏览器携带cookies信息向服务器发送请求，
         //获取上一次登陆的用信息，避免刷新页面后，登陆用户信息丢失
-        let user = this.$cookie.get("userId");
-        console.log(user);
-        console.log(res);
+        //let user = this.$cookie.get("userId");
+        /* console.log(user);
+        console.log(res); */
         //to-do保存到vuex里面
         this.$store.dispatch('saveUsername',res.username);
       })
