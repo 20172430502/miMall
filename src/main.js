@@ -16,13 +16,10 @@ axios.defaults.timeout = 8000;
 axios.interceptors.response.use(function(response){
   //返回数据
   let res = response.data;
-  let path = location.hash;
   if(res.status == 0){//成功
     return res.data;
   }else if(res.status == 10){//未登录
-    if(path!='#/index'){
-      window.location.href = '/#/login';
-    }
+    window.location.href = '/#/login';
   }else{//错误
     alert(res.msg);
     return Promise.reject();

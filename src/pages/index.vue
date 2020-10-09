@@ -323,7 +323,10 @@ import Modal from './../components/Modal'
           productId:id,
           selected:true
         }).then(()=>{
-          this.showModal = true;
+          let path = location.hash;
+          if(path != '#/login'){
+            this.showModal = true;
+          }
         }).catch(()=>{
           
         }) 

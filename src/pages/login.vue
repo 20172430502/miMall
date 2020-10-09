@@ -59,9 +59,9 @@
       },
       register(){
         this.axios.post('/user/register',{
-          username:'chi',
-          password:'123456',
-          email:'chi@163.com'
+          username:'张颜齐',
+          password:'张颜齐',
+          email:'zhangyanqi@163.com'
         }).then((res)=>{
           console.log(res);
         })

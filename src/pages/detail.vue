@@ -96,7 +96,12 @@ export default{
         productId:this.$route.params.id,
         selected:true
       }).then(()=>{
-        this.$router.push('/cart');
+        let path = location.hash;
+        if(path != '#/login'){
+          this.$router.push('/cart');
+        }
+      }).catch(()=>{
+
       })
     }
   }
