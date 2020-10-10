@@ -105,12 +105,14 @@ import NavFooter from '../components/NavFooter'
         let selected;
         if(type == '-'){
           if(quantity == 1){
-            alert("宝贝不能再减少了~");
+            this.$message.error("宝贝不能再减少了~");
+            return ;
           }
           --quantity;
         }else if(type == '+'){
           if(quantity > item.productStock){
-            alert("宝贝不能再增加了~");
+            this.$message.error("宝贝不能再增加了~");
+            return ;
           }
           ++quantity;
         }else{
@@ -133,6 +135,7 @@ import NavFooter from '../components/NavFooter'
         this.axios.delete('/carts/'+productId,{
           productId
         }).then((res)=>{
+          this.$message.success('删除成功');
           this.list = res.cartProductVoList || [];
           this.allChecked = res.selectedAll;
           this.cartTotalPrice = res.cartTotalPrice;
@@ -146,7 +149,7 @@ import NavFooter from '../components/NavFooter'
           return item.productSelected;
         }).length;
         if(len<1){
-          alert("至少选择一样商品进行结算");
+          this.$message.error("至少选择一样商品进行结算");
         }else{
           this.$router.push('/order/confirm');
         }

@@ -96,12 +96,9 @@ export default{
         productId:this.$route.params.id,
         selected:true
       }).then(()=>{
-        let path = location.hash;
-        if(path != '#/login'){
-          this.$router.push('/cart');
-        }
+        this.$router.push('/cart');
       }).catch(()=>{
-
+        this.$router.push('/login');
       })
     }
   }

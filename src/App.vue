@@ -26,6 +26,8 @@ export default {
         console.log(res); */
         //to-do保存到vuex里面
         this.$store.dispatch('saveUsername',res.username);
+      }).catch(()=>{
+        
       })
     }
   }
