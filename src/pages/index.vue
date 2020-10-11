@@ -10,7 +10,7 @@
                 <ul v-for="(item,index) in menuList" :key="index">
                   <li v-for="(sub,i) in item" :key="i">
                     <a :href="'/#/product/'+sub.id">
-                      <img :src="sub.img">
+                      <img v-lazy="sub.img">
                       {{sub.name}}
                     </a>
                   </li>
@@ -42,7 +42,7 @@
         </div>
         <swiper v-bind:options="swiperOption">
           <swiper-slide v-for="(item,index) in slideList" v-bind:key="index">
-            <a v-bind:href="'/#/product/'+item.id"><img v-bind:src="item.img"></a>
+            <a v-bind:href="'/#/product/'+item.id"><img v-lazy="item.img"></a>
           </swiper-slide>
           <!-- Optional controls -->
           <div class="swiper-pagination"  slot="pagination"></div>
@@ -52,25 +52,25 @@
       </div>
       <div class="ads-box">
         <a :href="'/#/product/'+item.id" v-for="(item,index) in adsList" :key="index">
-          <img :src="item.img">
+          <img v-lazy="item.img">
         </a>
       </div>
       <div class="banner">
         <a href="/#/product/30">
-          <img src="/imgs/banner-1.png" alt="">
+          <img v-lazy="'/imgs/banner-1.png'" alt="">
         </a>
       </div>
       <div class="product-box">
         <h2>手机</h2>
         <div class="wrapper">
           <div class="banner-left">
-            <a href="/#/product/35"><img src="/imgs/mix-alpha.jpg"></a>
+            <a href="/#/product/35"><img v-lazy="'/imgs/mix-alpha.jpg'"></a>
           </div>
           <div class="list-box">
             <div class="list" v-for="(item,i) in phoneList" :key="i">
               <span class="new-pro">新品</span>
               <div class="item-img">
-                <img :src="item.mainImage">
+                <img v-lazy="item.mainImage">
               </div>
               <div class="item-info">
                 <h3>{{item.name}}</h3>

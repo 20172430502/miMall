@@ -8,6 +8,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueCookie from 'vue-cookie'
 import store from './store'
 import { Message } from 'element-ui'
+import VueLazyLoad from 'vue-lazyload'
 import 'element-ui/lib/theme-chalk/index.css'
 
 axios.defaults.baseURL = '/api';
@@ -39,6 +40,9 @@ Vue.config.productionTip = false;
 Vue.use(VueAxios,axios);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueCookie);
+Vue.use(VueLazyLoad,{
+  loading:'/imgs/loading-svg/loading-bars.svg'
+})
 Vue.prototype.$message = Message;
 
 new Vue({
