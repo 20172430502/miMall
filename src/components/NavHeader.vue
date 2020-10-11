@@ -12,7 +12,7 @@
           <a href="javascript:;" v-if="username">{{username}}</a>
           <a href="javascript:;" v-if="!username" @click="login()">登录</a>
           <a href="javascript:;" v-if="username" @click="loginout()">退出</a>
-          <a href="javascript:;" v-if="username">我的订单</a>
+          <a href="javascript:;" v-if="username" @click="goToOrderList()">我的订单</a>
           <a href="javascript:;" class="my-cart" @click='goToCart()'>
             <span class="icon-cart"></span> 
             购物车
@@ -215,6 +215,9 @@ export default {
         this.$store.dispatch('saveUsername','');
         this.$message.success('成功退出');
       })
+    },
+    goToOrderList(){
+      this.$router.push('/order/list');
     }
   }
 };
