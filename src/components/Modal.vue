@@ -1,28 +1,28 @@
 <template>
-    <div class="modal" v-show="showModal">
-        <div class="mask"></div>
-        <div class="modal-dialog">
-            <div class="modal-header">
-                <span>{{title}}</span>
-                <a href="javascript:;" class="icon-close" @click="closeModal"></a>
+  <div class="modal" v-show="showModal">
+      <div class="mask"></div>
+      <div class="modal-dialog">
+          <div class="modal-header">
+              <span>{{title}}</span>
+              <a href="javascript:;" class="icon-close" @click="closeModal"></a>
+          </div>
+          <div class="modal-body">
+              <slot name="body"></slot>
+          </div>
+          <div class="modal-footer">
+            <div v-if="btnType == 1">
+              <a href="javascript:;" class="btn"  @click="sureBtn">{{sureText}}</a>
             </div>
-            <div class="modal-body">
-                <slot name="body"></slot>
+            <div v-if="btnType == 2">
+              <a href="javascript:;" class="btn-default" @click="closeModal">{{cancelText}}</a>
             </div>
-            <div class="modal-footer">
-              <div v-if="btnType == 1">
-                <a href="javascript:;" class="btn"  @click="goToCart">{{sureText}}</a>
-              </div>
-              <div v-if="btnType == 2">
-                <a href="javascript:;" class="btn-default" @click="closeModal">{{cancelText}}</a>
-              </div>
-              <div v-if="btnType == 3" class="btn-group">
-                <a href="javascript:;" class="btn"  @click="goToCart">{{sureText}}</a>
-                <a href="javascript:;" class="btn-default" @click="closeModal">{{cancelText}}</a>
-              </div>
+            <div v-if="btnType == 3" class="btn-group">
+              <a href="javascript:;" class="btn"  @click="sureBtn">{{sureText}}</a>
+              <a href="javascript:;" class="btn-default" @click="closeModal">{{cancelText}}</a>
             </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 </template>
 <script>
   export default{
@@ -51,8 +51,8 @@
       closeModal(){
         this.$emit("doChange");
       },
-      goToCart(){
-        this.$emit("goToCart");
+      sureBtn(){
+        this.$emit("sure");
       }
     }
   }

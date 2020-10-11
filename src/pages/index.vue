@@ -88,7 +88,7 @@
         modalType="middle"
         :showModal="showModal"
         @doChange = "closeModal"
-        @goToCart = "goToCart">
+        @sure = "goToCart">
         <template v-slot:body>
           <p>添加商品成功</p>
         </template>

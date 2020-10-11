@@ -1,10 +1,14 @@
 <template>
   <div class="orderList">
-      订单列表
+    <order-header title="订单列表"></order-header>
   </div>
 </template>
 <script>
+import OrderHeader from '../components/OrderHeader'
   export default{
-    name:'order-list'
+    name:'order-list',
+    components:{
+      OrderHeader
+    },
   }
 </script>
